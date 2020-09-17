@@ -861,6 +861,9 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
+# hierarchies {
+ram_adr_counter:inst
+}
 # macro_sequence
 
 # end
@@ -893,6 +896,321 @@ VERILOG_CONSTANT_LOOP_LIMIT
 5000
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
+}
+# hierarchies {
+start_trigger:inst2
+}
+# macro_sequence
+
+# end
+# entity
+ram_data_gate
+# storage
+db|MKDS_1_0.(8).cnf
+db|MKDS_1_0.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ram_data_gate.v
+153b4c3515a086ccf9222c1ae2d19ff
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+ram_data_gate:inst7
+}
+# macro_sequence
+
+# end
+# entity
+ram_data_check
+# storage
+db|MKDS_1_0.(10).cnf
+db|MKDS_1_0.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ram_data_check.v
+7654e6c8bcbe31d1d330b8911fa4e853
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+ram_data_check:inst1
+}
+# macro_sequence
+
+# end
+# entity
+my_ram_data_check
+# storage
+db|MKDS_1_0.(11).cnf
+db|MKDS_1_0.(11).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ram_data_check.v
+7654e6c8bcbe31d1d330b8911fa4e853
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+ram_data_check:inst1|my_ram_data_check:ram_data_check_1_4
+ram_data_check:inst1|my_ram_data_check:ram_data_check_2_4
+}
+# macro_sequence
+
+# end
+# entity
+my_ram_err_reg
+# storage
+db|MKDS_1_0.(12).cnf
+db|MKDS_1_0.(12).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ram_data_check.v
+7654e6c8bcbe31d1d330b8911fa4e853
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+ram_data_check:inst1|my_ram_err_reg:ram_err_reg
+}
+# macro_sequence
+
+# end
+# entity
+ram_control_unit
+# storage
+db|MKDS_1_0.(13).cnf
+db|MKDS_1_0.(13).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+My_RAM_control_unit.v
+e833beb65fb464e76ec27ac69802b7c
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+ram_control_unit:inst8
+}
+# macro_sequence
+
+# end
+# entity
+my_control_logic
+# storage
+db|MKDS_1_0.(14).cnf
+db|MKDS_1_0.(14).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+My_RAM_control_unit.v
+e833beb65fb464e76ec27ac69802b7c
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+idle
+100000
+PARAMETER_UNSIGNED_BIN
+DEF
+w1
+000001
+PARAMETER_UNSIGNED_BIN
+DEF
+w2
+100001
+PARAMETER_UNSIGNED_BIN
+DEF
+w3_1
+110001
+PARAMETER_UNSIGNED_BIN
+DEF
+w3_2
+101001
+PARAMETER_UNSIGNED_BIN
+DEF
+r1
+000010
+PARAMETER_UNSIGNED_BIN
+DEF
+r2
+000110
+PARAMETER_UNSIGNED_BIN
+DEF
+r3
+100010
+PARAMETER_UNSIGNED_BIN
+DEF
+r4_1
+110010
+PARAMETER_UNSIGNED_BIN
+DEF
+r4_2
+101010
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+ram_control_unit:inst8|my_control_logic:control_logic
+}
+# macro_sequence
+
+# end
+# entity
+my_state_reg
+# storage
+db|MKDS_1_0.(15).cnf
+db|MKDS_1_0.(15).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+My_RAM_control_unit.v
+e833beb65fb464e76ec27ac69802b7c
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+ram_control_unit:inst8|my_state_reg:state_reg
+}
+# macro_sequence
+
+# end
+# entity
+MKDS_1_0
+# storage
+db|MKDS_1_0.(9).cnf
+db|MKDS_1_0.(9).cnf
+# case_insensitive
+# source_file
+MKDS_1_0.bdf
+67a9e95bbf417afa61d6ec59233f197d
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
 }
 # hierarchies {
 |

@@ -36,7 +36,7 @@
  ------------------------------------------------------------------------------
 
 
-File Generation Date & Time: Wed Sep 16 17:30:53 2020
+File Generation Date & Time: Thu Sep 17 14:50:14 2020
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 CHIP  "MKDS_1_0"  ASSIGNED TO AN: EPF10K50SQC240-3
 
@@ -47,7 +47,7 @@ CONF_DONE                    : 2         : bidir  :                   :         
 nCEO                         : 3         : output :                   :         :           :                
 TDO                          : 4         : output :                   :         :           :                
 VCC_INT                      : 5         : power  :                   : 2.5V    :           :                
-Q                            : 6         : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 6         :        :                   :         :           :                
 GND*                         : 7         :        :                   :         :           :                
 GND*                         : 8         :        :                   :         :           :                
 GND*                         : 9         :        :                   :         :           :                
@@ -55,8 +55,8 @@ GND_INT                      : 10        : gnd    :                   :         
 GND*                         : 11        :        :                   :         :           :                
 GND*                         : 12        :        :                   :         :           :                
 GND*                         : 13        :        :                   :         :           :                
-GND*                         : 14        :        :                   :         :           :                
-GND*                         : 15        :        :                   :         :           :                
+wr_err_reg                   : 14        : output : LVTTL/LVCMOS      :         :           : N              
+ram_ce                       : 15        : output : LVTTL/LVCMOS      :         :           : N              
 VCC_IO                       : 16        : power  :                   : 3.3V    :           :                
 GND*                         : 17        :        :                   :         :           :                
 GND*                         : 18        :        :                   :         :           :                
@@ -131,9 +131,9 @@ GND*                         : 86        :        :                   :         
 GND*                         : 87        :        :                   :         :           :                
 GND*                         : 88        :        :                   :         :           :                
 VCC_CKLK                     : 89        : power  :                   : 2.5V    :           :                
-GND+                         : 90        :        :                   :         :           :                
-CLK                          : 91        : input  : LVTTL/LVCMOS      :         :           : N              
-GND+                         : 92        :        :                   :         :           :                
+adr_limit                    : 90        : input  : LVTTL/LVCMOS      :         :           : N              
+sys_clk                      : 91        : input  : LVTTL/LVCMOS      :         :           : N              
+start                        : 92        : input  : LVTTL/LVCMOS      :         :           : N              
 GND_CKLK                     : 93        : gnd    :                   :         :           :                
 GND*                         : 94        :        :                   :         :           :                
 GND*                         : 95        :        :                   :         :           :                
@@ -200,7 +200,7 @@ GND_INT                      : 155       : gnd    :                   :         
 GND*                         : 156       :        :                   :         :           :                
 GND*                         : 157       :        :                   :         :           :                
 GND*                         : 158       :        :                   :         :           :                
-Q_not                        : 159       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 159       :        :                   :         :           :                
 VCC_IO                       : 160       : power  :                   : 3.3V    :           :                
 GND*                         : 161       :        :                   :         :           :                
 GND*                         : 162       :        :                   :         :           :                
@@ -208,8 +208,8 @@ GND*                         : 163       :        :                   :         
 GND*                         : 164       :        :                   :         :           :                
 GND_INT                      : 165       : gnd    :                   :         :           :                
 GND*                         : 166       :        :                   :         :           :                
-GND*                         : 167       :        :                   :         :           :                
-GND*                         : 168       :        :                   :         :           :                
+done                         : 167       : output : LVTTL/LVCMOS      :         :           : N              
+inc_ram_adr                  : 168       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 169       :        :                   :         :           :                
 VCC_INT                      : 170       : power  :                   : 2.5V    :           :                
 GND*                         : 171       :        :                   :         :           :                
@@ -251,9 +251,9 @@ GND*                         : 206       :        :                   :         
 GND*                         : 207       :        :                   :         :           :                
 GND*                         : 208       :        :                   :         :           :                
 GND*                         : 209       :        :                   :         :           :                
-GND+                         : 210       :        :                   :         :           :                
+wr_rd                        : 210       : input  : LVTTL/LVCMOS      :         :           : N              
 GND+                         : 211       :        :                   :         :           :                
-CLR                          : 212       : input  : LVTTL/LVCMOS      :         :           : N              
+all_clear                    : 212       : input  : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 213       :        :                   :         :           :                
 GND*                         : 214       :        :                   :         :           :                
 GND*                         : 215       :        :                   :         :           :                

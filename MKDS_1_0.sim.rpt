@@ -1,5 +1,5 @@
 Simulator report for MKDS_1_0
-Wed Sep 16 17:39:55 2020
+Thu Sep 17 11:21:20 2020
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+------------------+
 ; Simulation Start Time       ; 0 ps             ;
 ; Simulation End Time         ; 1.0 us           ;
-; Simulation Netlist Size     ; 6 nodes          ;
-; Simulation Coverage         ;     100.00 %     ;
-; Total Number of Transitions ; 12               ;
+; Simulation Netlist Size     ; 25 nodes         ;
+; Simulation Coverage         ;      56.00 %     ;
+; Total Number of Transitions ; 149              ;
 ; Simulation Breakpoints      ; 0                ;
 ; Family                      ; FLEX10KE         ;
 ; Device                      ; EPF10K50SQC240-3 ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 ; Simulation mode                                                                            ; Timing            ; Timing        ;
 ; Start time                                                                                 ; 0 ns              ; 0 ns          ;
 ; Simulation results format                                                                  ; VWF               ;               ;
-; Vector input source                                                                        ; start_trigger.vwf ;               ;
+; Vector input source                                                                        ; ram_data_gate.vwf ;               ;
 ; Add pins automatically to simulation output waveforms                                      ; On                ; On            ;
 ; Check outputs                                                                              ; Off               ; Off           ;
 ; Report simulation coverage                                                                 ; On                ; On            ;
@@ -95,45 +95,72 @@ Please use Quartus II to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;     100.00 % ;
-; Total nodes checked                                 ; 6            ;
-; Total output ports checked                          ; 6            ;
-; Total output ports with complete 1/0-value coverage ; 6            ;
-; Total output ports with no 1/0-value coverage       ; 0            ;
-; Total output ports with no 1-value coverage         ; 0            ;
-; Total output ports with no 0-value coverage         ; 0            ;
+; Total coverage as a percentage                      ;      56.00 % ;
+; Total nodes checked                                 ; 25           ;
+; Total output ports checked                          ; 25           ;
+; Total output ports with complete 1/0-value coverage ; 14           ;
+; Total output ports with no 1/0-value coverage       ; 6            ;
+; Total output ports with no 1-value coverage         ; 9            ;
+; Total output ports with no 0-value coverage         ; 8            ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+----------------------------------------------------------------------+
-; Complete 1/0-Value Coverage                                          ;
-+-----------------------+---------------------------+------------------+
-; Node Name             ; Output Port Name          ; Output Port Type ;
-+-----------------------+---------------------------+------------------+
-; |start_trigger|Q~reg0 ; |start_trigger|Q~reg0     ; data_out0        ;
-; |start_trigger|CLK    ; |start_trigger|CLK~corein ; dataout          ;
-; |start_trigger|CLR    ; |start_trigger|CLR~corein ; dataout          ;
-; |start_trigger|Q      ; |start_trigger|Q          ; padio            ;
-; |start_trigger|Q_not  ; |start_trigger|Q_not      ; padio            ;
-; |start_trigger|Q~2    ; |start_trigger|Q~2        ; data_out0        ;
-+-----------------------+---------------------------+------------------+
++---------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                               ;
++--------------------------+-----------------------------+------------------+
+; Node Name                ; Output Port Name            ; Output Port Type ;
++--------------------------+-----------------------------+------------------+
+; |ram_data_gate|IN[0]     ; |ram_data_gate|IN[0]~corein ; dataout          ;
+; |ram_data_gate|OE        ; |ram_data_gate|OE~corein    ; dataout          ;
+; |ram_data_gate|IN[1]     ; |ram_data_gate|IN[1]~corein ; dataout          ;
+; |ram_data_gate|IN[2]     ; |ram_data_gate|IN[2]~corein ; dataout          ;
+; |ram_data_gate|IN[3]     ; |ram_data_gate|IN[3]~corein ; dataout          ;
+; |ram_data_gate|OUT[0]    ; |ram_data_gate|OUT[0]       ; padio            ;
+; |ram_data_gate|OUT[1]    ; |ram_data_gate|OUT[1]       ; padio            ;
+; |ram_data_gate|OUT[2]    ; |ram_data_gate|OUT[2]       ; padio            ;
+; |ram_data_gate|OUT[3]    ; |ram_data_gate|OUT[3]       ; padio            ;
+; |ram_data_gate|OUT[4]    ; |ram_data_gate|OUT[4]       ; padio            ;
+; |ram_data_gate|OUT[0]~8  ; |ram_data_gate|OUT[0]~8     ; data_out0        ;
+; |ram_data_gate|OUT[1]~9  ; |ram_data_gate|OUT[1]~9     ; data_out0        ;
+; |ram_data_gate|OUT[2]~10 ; |ram_data_gate|OUT[2]~10    ; data_out0        ;
+; |ram_data_gate|OUT[3]~11 ; |ram_data_gate|OUT[3]~11    ; data_out0        ;
++--------------------------+-----------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+-------------------------------------------------+
-; Missing 1-Value Coverage                        ;
-+-----------+------------------+------------------+
-; Node Name ; Output Port Name ; Output Port Type ;
-+-----------+------------------+------------------+
++---------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                  ;
++--------------------------+-----------------------------+------------------+
+; Node Name                ; Output Port Name            ; Output Port Type ;
++--------------------------+-----------------------------+------------------+
+; |ram_data_gate|IN[5]     ; |ram_data_gate|IN[5]~corein ; dataout          ;
+; |ram_data_gate|IN[6]     ; |ram_data_gate|IN[6]~corein ; dataout          ;
+; |ram_data_gate|IN[7]     ; |ram_data_gate|IN[7]~corein ; dataout          ;
+; |ram_data_gate|OUT[5]    ; |ram_data_gate|OUT[5]       ; padio            ;
+; |ram_data_gate|OUT[6]    ; |ram_data_gate|OUT[6]       ; padio            ;
+; |ram_data_gate|OUT[7]    ; |ram_data_gate|OUT[7]       ; padio            ;
+; |ram_data_gate|OUT[5]~13 ; |ram_data_gate|OUT[5]~13    ; data_out0        ;
+; |ram_data_gate|OUT[6]~14 ; |ram_data_gate|OUT[6]~14    ; data_out0        ;
+; |ram_data_gate|OUT[7]~15 ; |ram_data_gate|OUT[7]~15    ; data_out0        ;
++--------------------------+-----------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+-------------------------------------------------+
-; Missing 0-Value Coverage                        ;
-+-----------+------------------+------------------+
-; Node Name ; Output Port Name ; Output Port Type ;
-+-----------+------------------+------------------+
++---------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                  ;
++--------------------------+-----------------------------+------------------+
+; Node Name                ; Output Port Name            ; Output Port Type ;
++--------------------------+-----------------------------+------------------+
+; |ram_data_gate|IN[4]     ; |ram_data_gate|IN[4]~corein ; dataout          ;
+; |ram_data_gate|IN[5]     ; |ram_data_gate|IN[5]~corein ; dataout          ;
+; |ram_data_gate|IN[6]     ; |ram_data_gate|IN[6]~corein ; dataout          ;
+; |ram_data_gate|IN[7]     ; |ram_data_gate|IN[7]~corein ; dataout          ;
+; |ram_data_gate|OUT[4]~12 ; |ram_data_gate|OUT[4]~12    ; data_out0        ;
+; |ram_data_gate|OUT[5]~13 ; |ram_data_gate|OUT[5]~13    ; data_out0        ;
+; |ram_data_gate|OUT[6]~14 ; |ram_data_gate|OUT[6]~14    ; data_out0        ;
+; |ram_data_gate|OUT[7]~15 ; |ram_data_gate|OUT[7]~15    ; data_out0        ;
++--------------------------+-----------------------------+------------------+
 
 
 +---------------------+
@@ -149,18 +176,18 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Sep 16 17:39:55 2020
+    Info: Processing started: Thu Sep 17 11:21:20 2020
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off MKDS_1_0 -c MKDS_1_0
-Info: Using vector source file "E:/Dmitry/MKDS_1_0/start_trigger.vwf"
+Info: Using vector source file "C:/Users/HFE-RM/Desktop/MKAS/ram_data_gate.vwf"
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is     100.00 %
-Info: Number of transitions in simulation is 12
+Info: Simulation coverage is      56.00 %
+Info: Number of transitions in simulation is 149
 Info: Vector file MKDS_1_0.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
 Info: Quartus II Simulator was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 161 megabytes
-    Info: Processing ended: Wed Sep 16 17:39:55 2020
+    Info: Processing ended: Thu Sep 17 11:21:20 2020
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

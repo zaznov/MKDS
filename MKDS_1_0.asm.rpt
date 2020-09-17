@@ -1,5 +1,5 @@
 Assembler report for MKDS_1_0
-Wed Sep 16 17:30:55 2020
+Thu Sep 17 14:50:16 2020
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: E:/Dmitry/MKDS_1_0/MKDS_1_0.sof
-  6. Assembler Device Options: E:/Dmitry/MKDS_1_0/MKDS_1_0.pof
+  5. Assembler Device Options: C:/Users/HFE-RM/Desktop/MKAS/MKDS_1_0.sof
+  6. Assembler Device Options: C:/Users/HFE-RM/Desktop/MKAS/MKDS_1_0.pof
   7. Assembler Messages
 
 
@@ -38,9 +38,9 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Sep 16 17:30:55 2020 ;
+; Assembler Status      ; Successful - Thu Sep 17 14:50:16 2020 ;
 ; Revision Name         ; MKDS_1_0                              ;
-; Top-level Entity Name ; start_trigger                         ;
+; Top-level Entity Name ; ram_control_unit                      ;
 ; Family                ; FLEX10KE                              ;
 ; Device                ; EPF10K50SQC240-3                      ;
 +-----------------------+---------------------------------------+
@@ -77,37 +77,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+---------------------------------+
-; Assembler Generated Files       ;
-+---------------------------------+
-; File Name                       ;
-+---------------------------------+
-; E:/Dmitry/MKDS_1_0/MKDS_1_0.sof ;
-; E:/Dmitry/MKDS_1_0/MKDS_1_0.pof ;
-+---------------------------------+
++-------------------------------------------+
+; Assembler Generated Files                 ;
++-------------------------------------------+
+; File Name                                 ;
++-------------------------------------------+
+; C:/Users/HFE-RM/Desktop/MKAS/MKDS_1_0.sof ;
+; C:/Users/HFE-RM/Desktop/MKAS/MKDS_1_0.pof ;
++-------------------------------------------+
 
 
-+-----------------------------------------------------------+
-; Assembler Device Options: E:/Dmitry/MKDS_1_0/MKDS_1_0.sof ;
-+----------------+------------------------------------------+
-; Option         ; Setting                                  ;
-+----------------+------------------------------------------+
-; Device         ; EPF10K50SQC240-3                         ;
-; JTAG usercode  ; 0x0000007F                               ;
-; Checksum       ; 0x00010FDD                               ;
-+----------------+------------------------------------------+
++---------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/HFE-RM/Desktop/MKAS/MKDS_1_0.sof ;
++----------------+----------------------------------------------------+
+; Option         ; Setting                                            ;
++----------------+----------------------------------------------------+
+; Device         ; EPF10K50SQC240-3                                   ;
+; JTAG usercode  ; 0x0000007F                                         ;
+; Checksum       ; 0x00013C99                                         ;
++----------------+----------------------------------------------------+
 
 
-+-----------------------------------------------------------+
-; Assembler Device Options: E:/Dmitry/MKDS_1_0/MKDS_1_0.pof ;
-+--------------------+--------------------------------------+
-; Option             ; Setting                              ;
-+--------------------+--------------------------------------+
-; Device             ; EPC2                                 ;
-; JTAG usercode      ; 0x00000000                           ;
-; Checksum           ; 0x01C48153                           ;
-; Compression Ratio  ; 1                                    ;
-+--------------------+--------------------------------------+
++---------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/HFE-RM/Desktop/MKAS/MKDS_1_0.pof ;
++--------------------+------------------------------------------------+
+; Option             ; Setting                                        ;
++--------------------+------------------------------------------------+
+; Device             ; EPC2                                           ;
+; JTAG usercode      ; 0x00000000                                     ;
+; Checksum           ; 0x01C49D3B                                     ;
+; Compression Ratio  ; 1                                              ;
++--------------------+------------------------------------------------+
 
 
 +--------------------+
@@ -116,12 +116,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Sep 16 17:30:54 2020
+    Info: Processing started: Thu Sep 17 14:50:15 2020
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off MKDS_1_0 -c MKDS_1_0
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 218 megabytes
-    Info: Processing ended: Wed Sep 16 17:30:55 2020
+    Info: Processing ended: Thu Sep 17 14:50:16 2020
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

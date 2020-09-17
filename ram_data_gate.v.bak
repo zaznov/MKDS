@@ -1,0 +1,5 @@
+module ram_data_gate 
+#(parameter WIDTH=8)
+(input OE, input [WIDTH-1:0] IN, output [WIDTH-1:0] OUT);
+	assign OUT = (OE ? {WIDTH{1'bz}} : IN);
+endmodule
