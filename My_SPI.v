@@ -3,8 +3,9 @@ module My_SPI(CLK, CHIP_SELECT, MOSI, mosi_reg_out, miso, miso_reg_in, ready_new
 input CLK;
 input CHIP_SELECT;
 input MOSI;
-output reg miso;
+output miso;
 input ready_new_data_to_miso;
+
 
 reg [15:0] shift_buffer_mosi_reg;  
 reg [15:0] parallel_buffer_mosi_reg;
@@ -52,27 +53,18 @@ assign mosi_reg_out = parallel_buffer_mosi_reg;                           ///
 /////////////////////////----------Передатчик---------///////////////////////
                                                                           ///
 /////////////////////////////////////////////////////////////////////////////
-                                                                          ///
-always @ (posedge CLK)                                                    ///
+always @ (negedge CLK, posedge ready_new_data_to_miso)                    ///
 begin                                                                     ///
-	if (!CHIP_SELECT)                                                     ///
+	if (ready_new_data_to_miso)                                           ///
+	begin                                                                 ///     
+		shift_buffer_miso_reg[15:0] <= miso_reg_in[15:0];                 ///
+	end                                                                   ///
+	else if (!CHIP_SELECT)                                                ///
 	begin                                                                 ///
 		shift_buffer_miso_reg[15:1] <= shift_buffer_miso_reg[14:0];       ///
 	end                                                                   ///
-	if (ready_new_data_to_miso)                                           ///
-	begin                                                                 ///
-		shift_buffer_miso_reg[15:0] <= miso_reg_in[15:0];
-	end 
-end  
-
-
-always @ (negedge CLK, negedge CHIP_SELECT)                               ///
-begin                                                                     ///
-	if (!CHIP_SELECT)                                                     ///
-	begin                                                                 ///
-		miso <= shift_buffer_miso_reg[15];                                ///
-	end                                                                   ///
-end
+end                                                                       ///
+assign miso = shift_buffer_miso_reg[15];                                  ///
 /////////////////////////////////////////////////////////////////////////////
 
 endmodule 
