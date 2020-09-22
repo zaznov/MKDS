@@ -1,4 +1,4 @@
-module My_SPI(CLK, CHIP_SELECT, MOSI, mosi_reg_out, miso, miso_reg_in, ready_new_data_to_miso);
+module My_SPI(CLK, CHIP_SELECT, MOSI, spi_control_reg, miso, ERROR_COUNT_reg_in, ready_new_data_to_miso);
 
 input CLK;
 input CHIP_SELECT;
@@ -10,12 +10,14 @@ input ready_new_data_to_miso;
 reg [15:0] shift_buffer_mosi_reg;  
 reg [15:0] parallel_buffer_mosi_reg;
 reg [4:0] in_word_counter;
-output [15:0] mosi_reg_out;
+output [15:0] spi_control_reg;
 
 
 reg [15:0] shift_buffer_miso_reg; 
 reg [4:0] out_word_counter;
-input [15:0] miso_reg_in;
+input [15:0] ERROR_COUNT_reg_in;
+
+reg [15:0] register_to_return;
 
 
 /////////////////////////----------Приемник---------/////////////////////////
@@ -45,7 +47,7 @@ begin                                                                     ///
 end                                                                       ///
                                                                           ///
                                                                           ///
-assign mosi_reg_out = parallel_buffer_mosi_reg;                           ///
+assign spi_control_reg = parallel_buffer_mosi_reg;                           ///
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -56,8 +58,8 @@ assign mosi_reg_out = parallel_buffer_mosi_reg;                           ///
 always @ (negedge CLK, posedge ready_new_data_to_miso)                    ///
 begin                                                                     ///
 	if (ready_new_data_to_miso)                                           ///
-	begin                                                                 ///     
-		shift_buffer_miso_reg[15:0] <= miso_reg_in[15:0];                 ///
+	begin                                                                 ///
+		shift_buffer_miso_reg[15:0] <= ERROR_COUNT_reg_in[15:0];          ///
 	end                                                                   ///
 	else if (!CHIP_SELECT)                                                ///
 	begin                                                                 ///
