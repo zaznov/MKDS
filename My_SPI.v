@@ -1,10 +1,10 @@
-module My_SPI(CLK, CHIP_SELECT, MOSI, spi_control_reg, miso, ERROR_COUNT_reg_in, ready_new_data_to_miso);
+module My_SPI(CLK, CHIP_SELECT, MOSI, spi_control_reg, miso, ERROR_COUNT_reg_in, READY_new_data_to_miso);
 
 input CLK;
 input CHIP_SELECT;
 input MOSI;
 output miso;
-input ready_new_data_to_miso;
+input READY_new_data_to_miso;
 
 
 reg [15:0] shift_buffer_mosi_reg;  
@@ -55,9 +55,9 @@ assign spi_control_reg = parallel_buffer_mosi_reg;                           ///
 /////////////////////////----------Передатчик---------///////////////////////
                                                                           ///
 /////////////////////////////////////////////////////////////////////////////
-always @ (negedge CLK, posedge ready_new_data_to_miso)                    ///
+always @ (negedge CLK, posedge READY_new_data_to_miso)                    ///
 begin                                                                     ///
-	if (ready_new_data_to_miso)                                           ///
+	if (READY_new_data_to_miso)                                           ///
 	begin                                                                 ///
 		shift_buffer_miso_reg[15:0] <= ERROR_COUNT_reg_in[15:0];          ///
 	end                                                                   ///
