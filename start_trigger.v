@@ -1,4 +1,10 @@
-module start_trigger (input CLK, input CLR, output reg Q, output Q_not);
+module start_trigger 
+	(
+input CLK, 
+input CLR, 
+output reg Q, 
+output Q_not
+);
 
 	always @ (posedge CLK or posedge CLR) begin
 			if (CLR) Q <= 1'b0;
